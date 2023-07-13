@@ -71,6 +71,17 @@ userrouter.post("/login",async(req,res)=>{
 })
 
 
+userrouter.get("/alluser",async(req,res)=>{
+    try{
+        const user=await UserModel.find()
+        res.status(200).json({msg:"here are the all user",user})
+    }catch(err)
+    {
+        console.log(err)
+        res.status(400).json(err.message)
+    }
+})
+
 module.exports={
     userrouter
 }

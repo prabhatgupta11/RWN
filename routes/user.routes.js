@@ -67,10 +67,7 @@ userrouter.post("/login",async(req,res)=>{
     }catch(err){
         res.status(400).send({"msg":"Something wrong in login section",err})
     }
-   
 })
-
-
 userrouter.get("/alluser",async(req,res)=>{
     try{
         const user=await UserModel.find()
